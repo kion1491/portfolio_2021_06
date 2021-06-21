@@ -1,9 +1,85 @@
-div.test{
+@import url(reset.css);
+/* div.test{
 	width: 500px;
 	height: 500px;
 	position: absolute;background-color: yellow;
 	margin-left: 50%;transform: translateX(-50%);
-	/*top: -450px;*/
-	/*transform: scale(0);*/
 	transform-origin: right
+} */
+
+.clearfix{*zoom: 1;}
+.clearfix:before, .clearfix:after{content: '';display: block;line-height: 0;}
+.clearfix:after{clear: both;}
+
+
+
+
+.header{
+	position: fixed;
+	top: 1.5rem;
+	width: 90%;
+	margin-left: 5%;
+	height: 7rem;
+	background-color: #334E70;
+	border-radius: 1.8rem;
+	font-size: 2rem;
+	padding: 1rem;
+	box-sizing: border-box;
+	color: #eee7e0;
+	display: table;
+	transition: all 0.5s;
+}
+
+.header.on{
+	width: 100%;
+	top: 0;
+	margin-left: 0;
+	border-radius: 0;
+}
+
+.header .name_div{width: 50%;display: table-cell;vertical-align: middle;padding-left: 50px;}
+.header .name_div span{
+	/* position: absolute; */
+	position: relative;
+	/* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+.header .name_div span:before{
+	content: '';
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	background-color: #fff;
+	position: absolute;
+	top: -5px;
+	/* animation: nameSpanAni 0.6s 0.5s infinite alternate */
+}
+.header .name_div span:nth-child(1)::before{animation: nameSpanAni 0.6s 0.5s infinite alternate;left: 0.2rem;}
+.header .name_div span:nth-child(2)::before{animation: nameSpanAni 0.6s 0.7s infinite alternate;left: 0.2rem;}
+.header .name_div span:nth-child(3)::before{animation: nameSpanAni 0.6s 0.8s infinite alternate;left: 0.4rem;}
+
+@keyframes nameSpanAni{
+	0%{top: -0.5rem;}
+	100%{top: -1rem;}
+}
+
+
+.header ul{
+	float: right;
+	height: 5rem;
+	display: table;
+}
+.header li{
+	display: table-cell;
+    vertical-align: middle;
+	cursor: pointer;
+	padding-right: 1rem;
+}
+
+.header li:hover{color: #63ccc8}
+
+.content{
+	margin-top: 10rem;
+	padding: 1rem;
+	font-size: 3rem;
 }

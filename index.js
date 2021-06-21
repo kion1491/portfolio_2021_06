@@ -1,17 +1,19 @@
 window.onload = function () {
-
-  parallax_0 = document.getElementById("test");
-
+  header = document.getElementById("header");
   window.addEventListener('scroll', scrollFunc, false);
 
 }
 
 function scrollFunc(e){
   scrollTop = document.documentElement.scrollTop;
+  if(scrollTop <= 100){
+    console.log(header.classList)
+    header.classList.remove('on')
+    // header.style.top = "15px";
+  }else{
+    header.classList.add('on')
+    // header.style.top = 0;
 
-  console.log(scrollTop)
-
-
-  // parallax_0.style.top = `${scrollTop * 1.13}px`;
-  parallax_0.style.transform = `scale(${scrollTop*0.005})`
+  }
+  // parallax_0.style.transform = `scale(${scrollTop*0.005})`
 }
