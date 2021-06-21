@@ -12,6 +12,6 @@ function scrollFunc(e){
   console.log(scrollTop)
 
 
-  parallax_0.style.top = `${scrollTop * 1.13}px`;
-  parallax_0.style.transform = `scale(${scrollTop*0.001})`
+  // parallax_0.style.top = `${scrollTop * 1.13}px`;
+  parallax_0.style.transform = `scale(${scrollTop*0.005})`
 }
