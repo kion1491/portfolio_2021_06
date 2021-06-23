@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>guage fill</title>
+</head>
+<body>
+
+	<div class="content">
+    <div class="guage_box">
+      <ul>
+        <li>
+          <div class="guage_bar"></div>
+        </li>
+        <li>
+          <div class="guage_bar"></div>
+        </li>
+        <li>
+          <div class="guage_bar"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
+
+<style>
+  .guage_box ul{}
+  .guage_box ul li{background-color: #ddd;list-style: none;width: 100%;height: 50px;margin-bottom: 20px;}
+  .guage_box ul li div.guage_bar{background-color: #222;width: 0;height: 100%;transition: width 1s;position: relative;}
+  .guage_box ul li div.guage_bar span{color: #fff;position: absolute;left: 10px;}
+</style>
+
+<script>
+  window.onload = function(){
+
+    function guageFill(num, skill, fillPercent){
+      var guageBox = document.getElementsByClassName("guage_bar");
+      guageBox[num].style.width = fillPercent+"%"
+      guageBox[num].innerHTML = "<span>"+skill+ " : " +fillPercent+"%</span>"
+    }
+
+    guageFill(0, "HTML", 70);
+    guageFill(1, "CSS", 50);
+    guageFill(2, ".JavaScript",40);
+  }
+
+</script>
